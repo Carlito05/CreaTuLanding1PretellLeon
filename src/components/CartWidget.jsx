@@ -2,20 +2,24 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
 export default function CartWidget() {
-  const { count } = useCart();
-  const c = count();
+  const { count = () => 0 } = useCart() || {};
+  const c = Number(count());
 
   return (
     <Link
       to="/cart"
       aria-label="Carrito"
       style={{
-        color: "white",
+        color: "#fff",
         textDecoration: "none",
-        fontSize: "1.5rem",
+        display: "flex",
+        alignItems: "center",
+        gap: "6px",
+        fontSize: "1.25rem",
       }}
     >
-      🛒 {c > 0 && <span>({c})</span>}
+      <span role="img" aria-label="carrito">🛒</span>
+      {c > 0 && <span>({c})</span>}
     </Link>
   );
 }

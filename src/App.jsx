@@ -3,6 +3,8 @@ import NavBar from "./components/NavBar"
 import ItemListContainer from "./containers/ItemListContainer"
 import ItemDetailContainer from "./containers/ItemDetailContainer"
 import Cart from "./components/Cart";
+import Checkout from "./containers/Checkout";
+
 
 function App() {
   return (
@@ -19,7 +21,7 @@ function App() {
 
         <Route path="/cart" element={<Cart />} />
 
-        <Route path="/checkout" element={<p>Checkout (pendiente)</p>} />
+        <Route path="/checkout" element={<Checkout />} />
 
         <Route path="*" element={<h2>Página no encontrada</h2>} />
 
